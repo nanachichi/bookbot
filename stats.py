@@ -14,3 +14,17 @@ def times_char_appears(book_text):
         else:
             times_char_appears[char] = 1
     return times_char_appears
+
+
+def sort_on(items):
+    return items["num"]
+
+
+def sort_times_char_appears(char_count):
+    list_char_count = []
+    for key, value in char_count.items():
+        char_times = {"char": key, "num": value}
+        list_char_count.append(char_times)
+
+    list_char_count.sort(reverse=True, key=sort_on)
+    return list_char_count
